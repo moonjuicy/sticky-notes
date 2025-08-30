@@ -9,72 +9,127 @@ State is centralized in a single store with typed actions, components are small 
 
 ---
 
-# React + TypeScript + Vite
+## 🚀 Getting Started
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Prerequisites
 
-Currently, two official plugins are available:
+-   [Node.js](https://nodejs.org/) (v18 or later recommended)
+-   [pnpm](https://pnpm.io/) (or npm / yarn, but `pnpm` is used in this project)
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Installation
 
-## Expanding the ESLint configuration
+1. **Clone the repository**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
-
-            // Remove tseslint.configs.recommended and replace with this
-            ...tseslint.configs.recommendedTypeChecked,
-            // Alternatively, use this for stricter rules
-            ...tseslint.configs.strictTypeChecked,
-            // Optionally, add this for stylistic rules
-            ...tseslint.configs.stylisticTypeChecked,
-
-            // Other configs...
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-]);
+```bash
+git clone https://github.com/moonjuicy/sticky-notes.git
+cd sticky-notes-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Install dependencies**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
-            // Enable lint rules for React
-            reactX.configs['recommended-typescript'],
-            // Enable lint rules for React DOM
-            reactDom.configs.recommended,
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-]);
+```bash
+pnpm install
 ```
+
+3. **Start the development server**
+
+```bash
+pnpm dev
+```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173` to see the app running.
+
+### Available Scripts
+
+```bash
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
+
+# Run linting
+pnpm lint
+```
+
+---
+
+## 🎯 Features
+
+-   **Create Notes**: Click the "Add Note" button to create new sticky notes
+-   **Drag & Drop**: Move notes around the screen by dragging them
+-   **Resize**: Resize notes by dragging the bottom-right corner
+-   **Edit Content**: Click on notes to edit title and content
+-   **Color Coding**: Each note has a unique color theme
+-   **Delete**: Drag notes to the trash zone (bottom-right corner) to delete them
+-   **Persistent Storage**: Notes are saved in localStorage and persist between sessions
+-   **Z-Index Management**: Clicking on a note brings it to the front
+
+---
+
+## 🛠️ Tech Stack
+
+-   **React 19** - UI library
+-   **TypeScript** - Type safety
+-   **Vite** - Build tool and dev server
+-   **Zustand** - State management
+-   **Tailwind CSS** - Styling
+-   **React RND** - Draggable and resizable components
+-   **React Icons** - Icon library
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── StickyNote.tsx  # Individual note component
+│   └── TrashZone.tsx   # Trash zone component
+├── store/              # Zustand store
+│   └── noteStore.ts    # Note state management
+├── types/              # TypeScript type definitions
+│   └── noteTypes.ts    # Note-related types
+├── constants/          # App constants
+│   ├── colors.ts       # Color definitions
+│   └── notes.ts        # Note-related constants
+├── utils/              # Utility functions
+│   └── colors.ts       # Color utility functions
+└── App.tsx             # Main app component
+```
+
+---
+
+## 🎨 Customization
+
+### Colors
+
+Edit `src/constants/colors.ts` to customize the available note colors.
+
+### Styling
+
+Modify `src/constants/notes.ts` to adjust note constraints and styling.
+
+### Layout
+
+Update the main layout in `src/App.tsx` to change the overall app structure.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
