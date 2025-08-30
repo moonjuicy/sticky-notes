@@ -83,53 +83,6 @@ pnpm lint
 
 ---
 
-## 📁 Project Structure
-
-```
-src/
-├── components/          # React components
-│   ├── StickyNote.tsx  # Individual note component
-│   └── TrashZone.tsx   # Trash zone component
-├── store/              # Zustand store
-│   └── noteStore.ts    # Note state management
-├── types/              # TypeScript type definitions
-│   └── noteTypes.ts    # Note-related types
-├── constants/          # App constants
-│   ├── colors.ts       # Color definitions
-│   └── notes.ts        # Note-related constants
-├── utils/              # Utility functions
-│   └── colors.ts       # Color utility functions
-└── App.tsx             # Main app component
-```
-
----
-
-## 🎨 Customization
-
-### Colors
-
-Edit `src/constants/colors.ts` to customize the available note colors.
-
-### Styling
-
-Modify `src/constants/notes.ts` to adjust note constraints and styling.
-
-### Layout
-
-Update the main layout in `src/App.tsx` to change the overall app structure.
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
